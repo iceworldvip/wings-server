@@ -7,6 +7,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * 数据模板基础类
+ * @author ice
+ * @version 1.0
+ */
 @MappedSuperclass
 public class BaseModel implements Serializable {
     @Getter

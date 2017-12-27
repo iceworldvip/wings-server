@@ -1,6 +1,6 @@
 package org.ice.wings.server.controller;
 
-import org.ice.wings.server.domain.model.User;
+import org.ice.wings.server.domain.model.UserModel;
 import org.ice.wings.server.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * 用户操作路由控制器
+ *
+ * @author ice
+ * @version 1.0
+ */
 @RestController
 public class UserController extends BaseController {
 
@@ -17,19 +23,18 @@ public class UserController extends BaseController {
     private IUserService userService;
 
     @RequestMapping(path = "/user/", method = {RequestMethod.GET})
-    public User getUser() {
-        return new User();
+    public UserModel getUser() {
+        return new UserModel();
     }
 
     @RequestMapping(path = "/user/list/", method = {RequestMethod.GET})
-    public List<User> getUserList() {
+    public List<UserModel> getUserList() {
         return userService.getUserList();
     }
 
-    @RequestMapping(path = "/param/path/{pathParam}/", method = {RequestMethod.GET})
-    public String getRequestPathParam(@PathVariable String pathParam) {
-        System.out.println(pathParam);
-        return pathParam;
+    @RequestMapping(path = "/param/path/{username}/", method = {RequestMethod.GET})
+    public List<UserModel> getUserListByUsername(@PathVariable String username) {
+        return userService.getUserListByUsername(username);
     }
 
     @RequestMapping(path = "/param/", method = {RequestMethod.GET})
