@@ -11,6 +11,12 @@ import org.springframework.stereotype.Repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * 该类为示例类，仅供参考
+ *
+ * @author ice
+ * @version 1.0
+ */
 @Repository
 public class UserRepository {
 

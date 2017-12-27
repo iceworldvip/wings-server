@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 基础路由控制器
+ * <p>
+ * 提供统一路由规则和统一的前置操作等
  *
  * @author ice
  * @version 1.0
