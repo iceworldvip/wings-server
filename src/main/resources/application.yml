@@ -1,0 +1,31 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding:
+      UTF-8
+logging:
+  level:
+    org.springframework: INFO
+    com.ice: DEBUG
+################### DataSource Configuration ##########################
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.111:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+    tomcat:
+      max-active: 105
+    initialize: true
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57InnoDBDialect
+
+init-db: false
