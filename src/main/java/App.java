@@ -1,6 +1,7 @@
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -16,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = "org.ice.wings.server")
 @EntityScan(basePackages = "org.ice.wings.server.domain.model")
 @EnableJpaRepositories(basePackages = "org.ice.wings.server.domain")
+@ServletComponentScan(basePackages = "org.ice.wings.server")
 @EnableTransactionManagement
 @SpringBootApplication
 public class App {

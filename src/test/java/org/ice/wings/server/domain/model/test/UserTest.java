@@ -35,6 +35,7 @@ class User implements Serializable {
 
 }
 
+
 public class UserTest {
     private static Logger logger = LoggerFactory.getLogger(UserTest.class);
     public static void main(String[] args) throws IllegalAccessException {
